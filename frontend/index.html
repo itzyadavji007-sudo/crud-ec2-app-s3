@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Items Manager</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <h1>Items Manager</h1>
+
+    <section class="card">
+      <h2 id="form-title">Add item</h2>
+      <form id="item-form">
+        <input type="hidden" id="item-id" />
+
+        <label>Title
+          <input type="text" id="title" maxlength="150" required />
+        </label>
+
+        <label>Description
+          <textarea id="description" rows="3"></textarea>
+        </label>
+
+        <label>File (optional, max 10 MB)
+          <input type="file" id="file" accept=".pdf,.jpg,.jpeg,.png,.txt,.doc,.docx" />
+        </label>
+        <p id="current-file" class="muted"></p>
+
+        <div class="actions">
+          <button type="submit" id="submit-btn">Submit</button>
+          <button type="button" id="cancel-btn" class="secondary" hidden>Cancel edit</button>
+        </div>
+        <p id="message" role="status"></p>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Items</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>ID</th><th>Title</th><th>Description</th><th>File</th><th>Actions</th></tr>
+          </thead>
+          <tbody id="items-body"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
